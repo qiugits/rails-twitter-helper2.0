@@ -1,0 +1,35 @@
+<body>
+  <h1>Twitter#mentions</h1>
+
+  <%= form_tag('/twitter/button') do %>
+
+    <div class="timeline">
+      <table><% @timeline.each do |tweet| %>
+        <tr>
+          <td><img src="<%= tweet.user_profile_image %>"></td>
+          <td><%= tweet.text %></td>
+          <td><% if tweet.media %><img src="<%= tweet.media %>"><% end %></td>
+          <td><%= submit_tag tweet.status_id, name: 'archive_button' %></td>
+          <td><a href="https://twitter.com/<%= tweet.user_screen_name %>/status/<%= tweet.status_id %>" target="_blank">link</a></td>
+          <!-- radio button: http://railsdoc.com/references/radio_button -->
+          <td><%= radio_button_tag :id , tweet.status_id %><%= tweet.user_screen_name %></td>
+        </tr>
+      <% end %></table>
+    </div>
+
+    <div class="reply_box">
+
+      <%= text_field_tag :keyword %>
+      <%= submit_tag "search", name: 'search_button' %>
+
+      <%= submit_tag "reflesh", name: 'reflesh_button' %>
+      <p>@timeline.size = <%= @timeline.size %></p>
+
+      <%= text_area_tag :rep_text %>
+      <%= submit_tag "send", name: 'reply_button' %>
+    </div>
+
+  <% end %>
+
+  <p>Find me in app/views/twitter/mentions.html.erb</p>
+</body>

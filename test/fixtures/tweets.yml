@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status_id: 
+  text: MyText
+  source: MyString
+  in_reply_to_status_id: 1
+  user_screen_name: MyString
+  tag: MyString
+  memo: MyText
+
+two:
+  status_id: 
+  text: MyText
+  source: MyString
+  in_reply_to_status_id: 1
+  user_screen_name: MyString
+  tag: MyString
+  memo: MyText

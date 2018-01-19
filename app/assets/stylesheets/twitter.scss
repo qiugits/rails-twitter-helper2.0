@@ -1,0 +1,82 @@
+// Place all the styles related to the twitter controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//変数定義
+$body-bg-color: #252525;
+$body-txt-color: #E1E1E1;
+$body-txt-lowlight-color: #777777;
+$table-bg-color: #444444;
+$table-tr-bg-color: #303030;
+$textarea-bg-color: #E1E1E1;
+
+
+//https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+//https://css-tricks.com/left-and-right/
+//今使ってるのが一番下を参照したもの
+.container{
+  //display: table;
+}
+.timeline{
+  //display: table-cell;
+  padding-right: 280px;
+}
+.reply_box{
+  position: fixed;
+  right: 10px;
+  top: 200px;
+}
+span.name_or_link{
+  color: #555555;
+}
+input[name="archive_button"]{
+  border: 0px;
+  font-size: 0px;
+  background:url(archive_icon.png) no-repeat center;
+  //url("../images/archive_icon.png") no-repeat;
+  //overflow:visible; <-?
+  height: 40px;
+  width: 40px;
+}
+input[type="text"]:focus {
+  outline: 0;
+  border-color: orange;
+}
+textarea:focus {
+  outline: 0;
+  border-color: orange;
+}
+
+
+body{
+  color: $body-txt-color;
+  background-color: $body-bg-color;
+}
+a {
+  color: $body-txt-color;
+}
+a:visited {
+  color: $body-txt-lowlight-color;
+}
+td{
+  max-width: 700px;
+}
+table{
+  background-color: $table-bg-color;
+  max-width: 900px;
+}
+table tr:nth-child(odd) td {
+  background-color: $table-tr-bg-color;
+}
+table tr:nth-child(even) td {
+  background-color: $table-tr-bg-color;
+}
+textarea{
+  width: 20em;
+  height: 7em;
+  background-color: $textarea-bg-color;
+}
+img{
+  max-width: 160px;
+  max-height: 90px;
+}

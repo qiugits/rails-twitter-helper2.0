@@ -1,0 +1,12 @@
+<h1>Twitter#search</h1>
+
+<%= button_to "back", { action: 'mentions'} , {method: 'get'} %>
+<table><% @results.each do |tweet| %>
+  <tr>
+    <td><%= tweet.user_screen_name %></td>
+    <td><%= tweet.text %></td>
+    <td><% if tweet.media %><img src="<%= tweet.media %>"><% end %></td>
+  </tr>
+<% end %></table>
+
+<p>Find me in app/views/twitter/search.html.erb</p>
